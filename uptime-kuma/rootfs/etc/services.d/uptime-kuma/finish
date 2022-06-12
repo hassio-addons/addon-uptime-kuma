@@ -1,0 +1,11 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Uptime Kuma
+# Take down the S6 supervision tree when Uptime Kuma fails
+# ==============================================================================
+if [[ "${1}" -ne 0 ]] && [[ "${1}" -ne 256 ]]; then
+  bashio::log.warning "Uptime Kuma crashed, halting add-on"
+  exec /run/s6/basedir/bin/halt
+fi
+
+bashio::log.info "Uptime Kuma stopped, restarting..."

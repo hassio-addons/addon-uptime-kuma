@@ -1,0 +1,12 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Uptime Kuma
+# Starts Uptime Kuma
+# ==============================================================================
+export NODE_PATH=/opt/node_modules
+
+cd /opt/uptime-kuma || bashio::exit.nok "Could not change directory to Uptime Kume"
+
+bashio::log.info "Starting Uptime Kuma..."
+
+exec node server/server.js --data-dir="/data/"
