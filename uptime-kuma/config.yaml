@@ -5,7 +5,6 @@ slug: uptime-kuma
 description: It is a self-hosted monitoring tool like "Uptime Robot"
 url: https://github.com/hassio-addons/addon-uptime-kuma
 codenotary: codenotary@frenck.dev
-codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:3001]
 init: false
 arch:
