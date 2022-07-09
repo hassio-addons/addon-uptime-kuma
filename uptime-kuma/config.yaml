@@ -17,3 +17,8 @@ ports:
   3001/tcp: 3001
 ports_description:
   3001/tcp: Web interface
+
+options:
+  disable_frame_same_origin: false
+schema:
+  disable_frame_same_origin: bool

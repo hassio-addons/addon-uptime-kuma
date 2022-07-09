@@ -5,6 +5,11 @@
 # ==============================================================================
 export NODE_PATH=/opt/node_modules
 
+if bashio::config 'disable_frame_same_origin'; then
+    bashio::log.info "Setting disable_frame_same_origin to true"
+    export UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN=true
+fi
+
 cd /opt/uptime-kuma || bashio::exit.nok "Could not change directory to Uptime Kume"
 
 bashio::log.info "Starting Uptime Kuma..."
