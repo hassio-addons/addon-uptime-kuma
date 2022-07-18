@@ -15,6 +15,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
+        build-base=0.5-r3 \
         py3-pip=22.1.1-r0 \
     \
     && apk add --no-cache \
