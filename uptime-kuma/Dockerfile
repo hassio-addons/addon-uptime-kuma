@@ -28,7 +28,7 @@ RUN \
     && npm config set unsafe-perm true \
     \
     && mkdir -p /opt/uptime-kuma \
-    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.16.1.tar.gz" \
+    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.17.1.tar.gz" \
         | tar zxvf - --strip-components 1 -C /opt/uptime-kuma \
     \
     && cd /opt/uptime-kuma \
