@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -12,12 +12,10 @@ COPY requirements.txt /opt/
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-# hadolint ignore=DL3003
+# hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        build-base=0.5-r2 \
         py3-pip=22.1.1-r0 \
-        python3-dev=3.10.4-r0 \
     \
     && apk add --no-cache \
         nodejs=16.15.0-r1 \
@@ -34,7 +32,7 @@ RUN \
     \
     && cd /opt/uptime-kuma \
     \
-    && pip install --no-cache-dir -r /opt/requirements.txt \
+    && pip install -r /opt/requirements.txt \
     \
     && npm ci \
         --production \
