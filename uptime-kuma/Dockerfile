@@ -19,7 +19,7 @@ RUN \
         py3-pip=22.1.1-r0 \
     \
     && apk add --no-cache \
-        nodejs=16.16.0-r0 \
+        nodejs=16.17.1-r0 \
         npm=8.10.0-r0 \
         python3=3.10.5-r0 \
         iputils=20211215-r0 \
