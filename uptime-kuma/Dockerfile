@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.7
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -16,16 +16,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        py3-pip=22.1.1-r0 \
+        py3-pip=22.3.1-r1 \
     \
     && apk add --no-cache \
-        nodejs=16.17.1-r0 \
-        npm=8.10.0-r0 \
-        python3=3.10.8-r0 \
+        nodejs=18.12.1-r0 \
+        npm=9.1.2-r0 \
+        python3=3.10.9-r1 \
         iputils=20211215-r0 \
-        setpriv=2.38-r1 \
-    \
-    && npm config set unsafe-perm true \
+        setpriv=2.38.1-r0 \
     \
     && mkdir -p /opt/uptime-kuma \
     && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.18.5.tar.gz" \
@@ -36,12 +34,11 @@ RUN \
     && pip install -r /opt/requirements.txt \
     \
     && npm ci \
-        --production \
         --no-audit \
+        --no-fund \
         --no-optional \
         --no-update-notifier \
-        --only=production \
-        --unsafe-perm \
+        --omit=dev \
     && npm run download-dist \
     \
     && npm cache clear --force \
