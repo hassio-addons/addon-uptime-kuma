@@ -1,11 +1,12 @@
 #!/command/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # Home Assistant Community Add-on: Uptime Kuma
 # Starts Uptime Kuma
 # ==============================================================================
 export NODE_PATH=/opt/node_modules
 
-cd /opt/uptime-kuma || bashio::exit.nok "Could not change directory to Uptime Kume"
+cd /opt/uptime-kuma || bashio::exit.nok "Could not change directory to Uptime Kuma"
 
 bashio::log.info "Starting Uptime Kuma..."
 
