@@ -36,7 +36,6 @@ RUN \
     && npm ci \
         --no-audit \
         --no-fund \
-        --no-optional \
         --no-update-notifier \
         --omit=dev \
     && npm run download-dist \
