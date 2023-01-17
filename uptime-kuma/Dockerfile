@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -23,7 +23,7 @@ RUN \
         npm=9.1.2-r0 \
         python3=3.10.9-r1 \
         iputils=20211215-r0 \
-        setpriv=2.38.1-r0 \
+        setpriv=2.38.1-r1 \
     \
     && mkdir -p /opt/uptime-kuma \
     && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.19.3.tar.gz" \
