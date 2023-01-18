@@ -26,7 +26,7 @@ RUN \
         setpriv=2.38.1-r1 \
     \
     && mkdir -p /opt/uptime-kuma \
-    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.19.5.tar.gz" \
+    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.19.6.tar.gz" \
         | tar zxvf - --strip-components 1 -C /opt/uptime-kuma \
     \
     && cd /opt/uptime-kuma \
