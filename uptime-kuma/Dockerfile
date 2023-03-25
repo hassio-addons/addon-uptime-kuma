@@ -12,6 +12,7 @@ COPY requirements.txt /opt/
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
+ARG UPTIME_KUMA_VERSION="1.21.0"
 # hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -26,7 +27,7 @@ RUN \
         setpriv=2.38.1-r1 \
     \
     && mkdir -p /opt/uptime-kuma \
-    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/1.21.0.tar.gz" \
+    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/${UPTIME_KUMA_VERSION}.tar.gz" \
         | tar zxvf - --strip-components 1 -C /opt/uptime-kuma \
     \
     && cd /opt/uptime-kuma \
