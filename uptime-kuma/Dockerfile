@@ -17,14 +17,14 @@ ARG UPTIME_KUMA_VERSION="1.21.3"
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        py3-pip=22.3.1-r1 \
+        py3-pip=23.1.2-r0 \
     \
     && apk add --no-cache \
-        nodejs=18.14.2-r0 \
-        npm=9.1.2-r0 \
-        python3=3.10.11-r0 \
-        iputils=20211215-r0 \
-        setpriv=2.38.1-r1 \
+        nodejs=18.16.0-r1 \
+        npm=9.6.6-r0 \
+        python3=3.11.3-r11 \
+        iputils=20221126-r2 \
+        setpriv=2.38.1-r7 \
     \
     && mkdir -p /opt/uptime-kuma \
     && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/${UPTIME_KUMA_VERSION}.tar.gz" \
