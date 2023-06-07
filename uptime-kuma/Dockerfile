@@ -24,7 +24,7 @@ RUN \
         npm=9.6.6-r0 \
         python3=3.11.3-r11 \
         iputils=20221126-r2 \
-        setpriv=2.38.1-r7 \
+        setpriv=2.38.1-r8 \
     \
     && mkdir -p /opt/uptime-kuma \
     && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/${UPTIME_KUMA_VERSION}.tar.gz" \
