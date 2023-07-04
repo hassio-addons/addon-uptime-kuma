@@ -12,7 +12,7 @@ COPY requirements.txt /opt/
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG UPTIME_KUMA_VERSION="1.22.0"
+ARG UPTIME_KUMA_VERSION="1.22.1"
 # hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
