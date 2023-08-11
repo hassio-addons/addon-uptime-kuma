@@ -17,3 +17,9 @@ ports:
   3001/tcp: 3001
 ports_description:
   3001/tcp: Web interface
+options:
+  envvars: []
+schema:
+  envvars:
+    - name: match(^UPTIME_KUMA_([A-Z0-9_])+$)
+      value: str
