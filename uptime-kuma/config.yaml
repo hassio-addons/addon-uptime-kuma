@@ -2,16 +2,14 @@
 name: Uptime Kuma
 version: dev
 slug: uptime-kuma
+ingress: true
+ingress_port: 3001
+panel_icon: mdi:clock-alert
 description: It is a self-hosted monitoring tool like "Uptime Robot"
 url: https://github.com/hassio-addons/addon-uptime-kuma
 codenotary: codenotary@frenck.dev
-webui: http://[HOST]:[PORT:3001]
 init: false
 arch:
   - aarch64
   - amd64
   - armv7
-ports:
-  3001/tcp: 3001
-ports_description:
-  3001/tcp: Web interface

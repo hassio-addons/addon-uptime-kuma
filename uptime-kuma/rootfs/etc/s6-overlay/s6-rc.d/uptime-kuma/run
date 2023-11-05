@@ -10,4 +10,7 @@ cd /opt/uptime-kuma || bashio::exit.nok "Could not change directory to Uptime Ku
 
 bashio::log.info "Starting Uptime Kuma..."
 
-exec node server/server.js --data-dir="/data/"
+export UPTIME_KUMA_DB_TYPE=sqlite
+export UPTIME_KUMA_DB_NAME=kuma.db
+
+exec node server/server.js --data-dir="/data/" --ips-to-allow="172.30.32.2"

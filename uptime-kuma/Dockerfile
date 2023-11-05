@@ -25,10 +25,10 @@ RUN \
         python3=3.11.6-r0 \
         iputils=20221126-r2 \
         setpriv=2.38.1-r8 \
+        git \
     \
     && mkdir -p /opt/uptime-kuma \
-    && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/${UPTIME_KUMA_VERSION}.tar.gz" \
-        | tar zxvf - --strip-components 1 -C /opt/uptime-kuma \
+    && git clone --depth 1  --branch add-ips-to-allow  https://github.com/inverse/uptime-kuma.git /opt/uptime-kuma \
     \
     && cd /opt/uptime-kuma \
     \
