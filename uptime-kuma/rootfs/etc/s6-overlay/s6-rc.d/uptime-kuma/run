@@ -13,4 +13,4 @@ bashio::log.info "Starting Uptime Kuma..."
 export UPTIME_KUMA_DB_TYPE=sqlite
 export UPTIME_KUMA_DB_NAME=kuma.db
 
-exec node server/server.js --data-dir="/data/" --ips-to-allow="172.30.32.2"
+exec node server/server.js --data-dir="/data/" --ips-to-allow="::ffff:172.30.32.2"
