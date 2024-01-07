@@ -57,14 +57,10 @@ RUN \
         /root/.npm \
         /root/.npmrc
 
-RUN curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o /usr/bin/cloudflared \
-    && chmod +x /usr/bin/cloudflared
-
 # Copy root filesystem
 COPY rootfs /
 
 # Build arguments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
 ARG BUILD_NAME
