@@ -32,6 +32,15 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "louislam/uptime-kuma"
+    },
+    {
+      "fileMatch": ["/Dockerfile$"],
+      "matchStrings": [
+        "ARG CLOUDFLARED_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "cloudflare/cloudflared",
+      "versioningTemplate": "loose"
     }
   ],
   "packageRules": [
