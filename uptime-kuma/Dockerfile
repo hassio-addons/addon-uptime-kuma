@@ -13,6 +13,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 ARG UPTIME_KUMA_VERSION="1.23.11"
+ARG CLOUDFLARED_VERSION="2023.10.0"
+ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -38,6 +40,13 @@ RUN \
         --no-update-notifier \
         --omit=dev \
     && npm run download-dist \
+    \
+    && if [ "${BUILD_ARCH}" = "aarch64" ]; then CLOUDFLARED_ARCH="arm64"; \
+    elif [ "${BUILD_ARCH}" = "amd64" ]; then CLOUDFLARED_ARCH="amd64"; \
+    elif [ "${BUILD_ARCH}" = "armv7" ]; then CLOUDFLARED_ARCH="arm"; fi \
+    && curl -L --fail -o /usr/bin/cloudflared \
+        "https://github.com/cloudflare/cloudflared/releases/download/${CLOUDFLARED_VERSION}/cloudflared-linux-${CLOUDFLARED_ARCH}" \
+    && chmod +x /usr/bin/cloudflared \
     \
     && npm cache clear --force \
     \
