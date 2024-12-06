@@ -22,7 +22,7 @@ RUN \
         py3-pip=23.3.1-r0 \
     \
     && apk add --no-cache \
-        python3=3.11.10-r0 \
+        python3=3.11.11-r0 \
         iputils=20221126-r2 \
         setpriv=2.39.3-r0 \
     \
