@@ -29,10 +29,6 @@ Please read the rest of this document further instructions.
 This add-on has no configuration options, everything can be managed
 and configured via the Uptime Kuma interface.
 
-## Known issues and limitations
-
-- Cloudflare is not installed in this add-on and thus not available as
-  an option inside Uptime Kuma as of yet.
 
 ## Changelog & Releases
 
