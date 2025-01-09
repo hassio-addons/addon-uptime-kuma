@@ -29,7 +29,6 @@ Please read the rest of this document further instructions.
 This add-on has no configuration options, everything can be managed
 and configured via the Uptime Kuma interface.
 
-
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
