@@ -15,3 +15,5 @@ ports:
   3001/tcp: 3001
 ports_description:
   3001/tcp: Web interface
+discovery:
+  - uptime_kuma
