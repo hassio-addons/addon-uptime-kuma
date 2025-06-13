@@ -1,0 +1,20 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Uptime Kuma
+# Sends discovery information to Home Assistant.
+# ==============================================================================
+declare config
+
+# Wait for AdGuard Home to become available
+bashio::net.wait_for 3001 127.0.0.1 300
+
+config=$(bashio::var.json \
+    url "http://127.0.0.1:3001"
+)
+
+if bashio::discovery "uptime_kuma" "${config}" > /dev/null; then
+    bashio::log.info "Successfully send discovery information to Home Assistant."
+else
+    bashio::log.error "Discovery message to Home Assistant failed!"
+fi
