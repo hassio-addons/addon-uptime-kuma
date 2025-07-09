@@ -10,4 +10,4 @@ cd /opt/uptime-kuma || bashio::exit.nok "Could not change directory to Uptime Ku
 
 bashio::log.info "Starting Uptime Kuma..."
 
-exec node server/server.js --data-dir="/data/"
+exec node server/server.js --data-dir="/data/" --disable-frame-sameorigin="true"
