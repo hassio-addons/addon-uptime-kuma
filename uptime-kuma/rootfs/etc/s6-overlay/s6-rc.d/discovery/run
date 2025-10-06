@@ -10,11 +10,11 @@ declare config
 bashio::net.wait_for 3001 127.0.0.1 300
 
 config=$(bashio::var.json \
-    url "http://127.0.0.1:$(bashio::addon.port 3001)"
+    url "http://$(hostname):$(bashio::addon.port 3001)"
 )
 
 if bashio::discovery "uptime_kuma" "${config}" > /dev/null; then
-    bashio::log.info "Successfully send discovery information to Home Assistant."
+    bashio::log.info "Successfully sent discovery information to Home Assistant."
 else
-    bashio::log.error "Discovery message to Home Assistant failed!"
+    bashio::log.error "Failed to send discovery information to Home Assistant!"
 fi
