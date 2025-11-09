@@ -10,7 +10,7 @@ declare config
 bashio::net.wait_for 3001 127.0.0.1 300
 
 config=$(bashio::var.json \
-    url "http://$(hostname):$(bashio::addon.port 3001)"
+    url "http://$(hostname):3001"
 )
 
 if bashio::discovery "uptime_kuma" "${config}" > /dev/null; then
