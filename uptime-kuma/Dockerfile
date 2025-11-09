@@ -44,8 +44,7 @@ RUN \
     && npm run download-dist \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then CLOUDFLARED_ARCH="arm64"; \
-    elif [ "${BUILD_ARCH}" = "amd64" ]; then CLOUDFLARED_ARCH="amd64"; \
-    elif [ "${BUILD_ARCH}" = "armv7" ]; then CLOUDFLARED_ARCH="arm"; fi \
+    elif [ "${BUILD_ARCH}" = "amd64" ]; then CLOUDFLARED_ARCH="amd64"; fi \
     && curl -L --fail -o /usr/bin/cloudflared \
         "https://github.com/cloudflare/cloudflared/releases/download/${CLOUDFLARED_VERSION}/cloudflared-linux-${CLOUDFLARED_ARCH}" \
     && chmod +x /usr/bin/cloudflared \
