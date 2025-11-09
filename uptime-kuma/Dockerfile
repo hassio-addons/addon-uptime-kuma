@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.0.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -12,8 +12,8 @@ COPY requirements.txt /opt/
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG UPTIME_KUMA_VERSION="1.23.16"
-ARG CLOUDFLARED_VERSION="2025.7.0"
+ARG UPTIME_KUMA_VERSION="2.0.2"
+ARG CLOUDFLARED_VERSION="2025.11.1"
 ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3003,DL3042
 RUN \
@@ -24,8 +24,8 @@ RUN \
     && apk add --no-cache \
         iputils=20240905-r0 \
         nodejs=22.16.0-r2 \
-        npm=11.3.0-r0 \
-        python3=3.12.11-r0 \
+        npm=11.3.0-r1 \
+        python3=3.12.12-r0 \
         setpriv=2.41-r9 \
     \
     && mkdir -p /opt/uptime-kuma \
