@@ -19,14 +19,14 @@ ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        py3-pip=25.1.1-r0 \
+        py3-pip=25.1.1-r1 \
     \
     && apk add --no-cache \
-        iputils=20240905-r0 \
-        nodejs=22.22.0-r0 \
-        npm=11.6.4-r0 \
+        iputils=20250605-r0 \
+        nodejs=24.13.0-r1 \
+        npm=11.6.3-r0 \
         python3=3.12.12-r0 \
-        setpriv=2.41-r9 \
+        setpriv=2.41.2-r0 \
     \
     && mkdir -p /opt/uptime-kuma \
     && curl -L -s "https://github.com/louislam/uptime-kuma/archive/refs/tags/${UPTIME_KUMA_VERSION}.tar.gz" \
