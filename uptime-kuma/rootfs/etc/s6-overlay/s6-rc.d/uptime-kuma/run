@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: Uptime Kuma
+# Home Assistant Community App: Uptime Kuma
 # Starts Uptime Kuma
 # ==============================================================================
 export NODE_PATH=/opt/node_modules

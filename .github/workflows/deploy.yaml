@@ -6,14 +6,32 @@ on:
   release:
     types:
       - published
-  workflow_run:
-    workflows: ["CI"]
-    branches: [main]
-    types:
-      - completed
+  push:
+    branches:
+      - main
+
+permissions: {}
 
 jobs:
-  workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
+  ci:
+    name: CI
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
+    uses: hassio-addons/workflows/.github/workflows/app-ci.yaml@main
+    with:
+      slug: uptime-kuma
+
+  deploy:
+    name: Deploy
+    needs: ci
+    permissions:
+      contents: read
+      packages: write
+    uses: hassio-addons/workflows/.github/workflows/app-deploy.yaml@main
+    with:
+      slug: uptime-kuma
     secrets:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
